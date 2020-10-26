@@ -1,5 +1,10 @@
 build -c dbg
 build --cxxopt=-std=c++17
+build --cxxopt=-fPIC
+build --cxxopt=-pthread
+build --copt=-fPIC
+build --force_pic
+build --linkopt=-fPIC
 
 build:debug -c dbg
 build:debug --javacopt="-g"
