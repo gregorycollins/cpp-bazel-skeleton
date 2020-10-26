@@ -8,7 +8,7 @@
 #include <gflags/gflags.h>
 #include <grpcpp/grpcpp.h>
 
-#include "pong.grpc.pb.h"
+#include "grpc_pong/pong.grpc.pb.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;

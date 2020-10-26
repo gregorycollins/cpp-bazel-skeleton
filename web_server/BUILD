@@ -10,11 +10,20 @@ COPTS = [
     "-Wall",
 ]
 
+cc_binary(
+    copts = COPTS,
+    name = "web_server",
+    srcs = ["web_server.cc"],
+    deps = [
+        "@github_unetworking_uwebsockets//:main",
+        "@zlib//:zlib",
+        "@cpprest//:cpprest",  # todo - remove
+    ],
+)
+
 filegroup(
     name = "all_targets",
     srcs = [
-        "//grpc_pong:all_targets",
-        "//web_server:all_targets",
-    ]
+        ":web_server",
+    ],
 )
-
