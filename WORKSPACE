@@ -36,10 +36,9 @@ http_archive(
 http_archive(
     name = "com_github_grpc_grpc",
     urls = [
-        "https://github.com/grpc/grpc/archive/v1.31.1.tar.gz",
+        "https://github.com/grpc/grpc/archive/v1.33.1.tar.gz",
     ],
-    sha256 = "f20f92a09f7245e2c437fbd729849ffe3b2dd39a46c9378d201f8f95cc9f12ea",
-    strip_prefix = "grpc-1.31.1",
+    strip_prefix = "grpc-1.33.1",
 )
 
 load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
@@ -98,5 +97,17 @@ new_git_repository(
     build_file = "@//:third_party/cpprest/cpprest.BUILD",
     remote = "https://github.com/microsoft/cpprestsdk.git",
     commit = "18212a2a7967e12d740bfb957e500892b3463c88",
+    init_submodules = True,
+)
+
+
+#------------------------------------------------------------------------------
+# etcd-cpp-apiv3
+#------------------------------------------------------------------------------
+new_git_repository(
+    name = "etcd-cpp-apiv3",
+    remote = "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3.git",
+    build_file = "@//:third_party/etcd-cpp-apiv3.BUILD",
+    branch = "master",
     init_submodules = True,
 )

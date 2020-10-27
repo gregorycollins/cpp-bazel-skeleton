@@ -13,6 +13,7 @@ COPTS = [
 filegroup(
     name = "all_targets",
     srcs = [
+        "//etcd_client:all_targets",
         "//grpc_pong:all_targets",
         "//web_server:all_targets",
     ]
