@@ -106,8 +106,12 @@ new_git_repository(
 #------------------------------------------------------------------------------
 new_git_repository(
     name = "etcd-cpp-apiv3",
-    remote = "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3.git",
     build_file = "@//:third_party/etcd-cpp-apiv3.BUILD",
-    branch = "master",
+
+    # branch = "master",
+    # remote = "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3.git",
+    branch = "proto-move",
+    remote = "https://github.com/gregorycollins/etcd-cpp-apiv3.git",
+
     init_submodules = True,
 )
