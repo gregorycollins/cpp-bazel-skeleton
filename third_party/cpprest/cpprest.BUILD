@@ -2,11 +2,11 @@
 licenses(["notice"])
 exports_files(["LICENSES"])
 
-load("@rules_foreign_cc//tools/build_defs:cmake.bzl", "cmake_external")
+load("@rules_foreign_cc//foreign_cc:cmake.bzl", "cmake")
 
 filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:private"])
 
-cmake_external(
+cmake(
     name = "cpprest",
     deps = [
         # note: really openssl, boringssl doesn't work here
@@ -28,6 +28,6 @@ cmake_external(
     },
     lib_source = ":all",
     out_lib_dir = "lib64",
-    static_libraries = ["libcpprest.a"],
+    out_static_libs = ["libcpprest.a"],
     visibility = ["//visibility:public"],
 )

@@ -1,4 +1,4 @@
-load("@rules_foreign_cc//tools/build_defs:boost_build.bzl", "boost_build")
+load("@rules_foreign_cc//foreign_cc:boost_build.bzl", "boost_build")
 
 package(default_visibility = ["//visibility:private"])
 filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:private"])
@@ -7,7 +7,7 @@ boost_build(
     name = "boost",
     lib_source = ":all",
     defines = ["BOOST_ASIO_SEPARATE_COMPILATION"],
-    static_libraries = [
+    out_static_libs = [
         "libboost_atomic.a",
         "libboost_chrono.a",
         "libboost_date_time.a",

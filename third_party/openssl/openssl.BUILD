@@ -2,7 +2,7 @@
 
 package(default_visibility = ["//visibility:public"])
 
-load("@rules_foreign_cc//tools/build_defs:configure.bzl", "configure_make")
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
 
 filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:public"])
 
@@ -53,7 +53,7 @@ configure_make(
         "-ldl",
         "-lpthread",
     ],
-    static_libraries = [
+    out_static_libs = [
         "libssl.a",
         "libcrypto.a",
     ],

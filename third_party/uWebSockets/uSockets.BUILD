@@ -1,4 +1,4 @@
-load("@rules_foreign_cc//tools/build_defs:make.bzl", "make")
+load("@rules_foreign_cc//foreign_cc:make.bzl", "make")
 package(default_visibility = ["//visibility:private"])
 filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:private"])
 
@@ -15,7 +15,7 @@ make(
         "cp -r $$EXT_BUILD_ROOT$$/external/github_unetworking_usockets/src/internal $$INSTALLDIR$$/include/internal",
         ],
     lib_source = "@github_unetworking_usockets//:all",
-    static_libraries = ["uSockets.a"],
+    out_static_libs = ["uSockets.a"],
     visibility = ["//visibility:public"],
     deps = [
         "@boringssl//:ssl",
